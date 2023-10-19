@@ -1,0 +1,17 @@
+<h1>Login</h1>
+<%= form_with(model: @user, url: login_path, local: true) do |form| %>
+  <%= form.label :email %>
+  <%= form.email_field :email %><br>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %><br>
+
+  <%= form.submit 'Login' %>
+
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <%= value %>
+  </div>
+<% end %>
+
+<% end %>
